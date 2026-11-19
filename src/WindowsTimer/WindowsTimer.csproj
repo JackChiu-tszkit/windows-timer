@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>Timer</AssemblyName>
+    <RootNamespace>WindowsTimer</RootNamespace>
+    <Version>1.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Product>Timer</Product>
+    <Company>Windows Timer</Company>
+    <Description>A minimalist desktop timer for Windows.</Description>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- Per-monitor DPI is declared in app.manifest for WPF. The tray icon also enables WinForms, which otherwise warns about that manifest. -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Remove="System.Drawing" />
+    <Using Remove="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WindowsTimer.Core\WindowsTimer.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app.ico" />
+  </ItemGroup>
+</Project>
